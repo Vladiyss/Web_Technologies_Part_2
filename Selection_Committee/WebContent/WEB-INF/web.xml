@@ -1,12 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>Selection_Committee</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+  <servlet>
+        <servlet-name>MainPage</servlet-name>
+        <servlet-class>by.committee.controller.LoginController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>MainPage</servlet-name>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/change_lang</url-pattern>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterPage</servlet-name>
+        <servlet-class>by.committee.controller.RegisterController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegisterPage</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>EnrollmentForm</servlet-name>
+        <servlet-class>by.committee.controller.EnrollmentController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EnrollmentForm</servlet-name>
+        <url-pattern>/enroll</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FacultiesPage</servlet-name>
+        <servlet-class>by.committee.controller.Controller</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FacultiesPage</servlet-name>
+        <url-pattern>/faculties</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminsPage</servlet-name>
+        <servlet-class>by.committee.controller.AdminController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminsPage</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>by.bsuir.controller.EncodingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/</url-pattern>
+        <servlet-name>RegisterPage</servlet-name>
+        <servlet-name>MainPage</servlet-name>
+        <servlet-name>AdminsPage</servlet-name>
+        <servlet-name>FacultiesPage</servlet-name>
+        <servlet-name>EnrollmentForm</servlet-name>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>RoleFilter</filter-name>
+        <filter-class>by.committee.controller.RoleFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>RoleFilter</filter-name>
+        <url-pattern>/</url-pattern>
+        <servlet-name>EnrollmentForm</servlet-name>
+        <servlet-name>AdminsPage</servlet-name>
+    </filter-mapping>
 </web-app>

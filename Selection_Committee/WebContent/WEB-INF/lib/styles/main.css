@@ -1,0 +1,70 @@
+@charset "UTF-8";
+body{
+	width:auto;
+	margin:0;
+	font-family:Trebuchet MS;
+	background-size: cover;
+}
+
+._forms{
+	margin:15px;
+	display:flex;
+	justify-content:center;
+}
+
+course_table{
+	display: flex;
+	justify-content: center;
+}
+
+label{
+	font-size:20px;
+	color: rgb(0, 0, 0);
+}
+
+input{
+	font-family:Trebuchet MS;
+	font-size:20px;
+}
+._submit{
+	font-family:Trebuchet MS;
+	font-size:20px;
+	margin-left:140px;
+}
+
+._reg_link{
+	display: flex;
+	justify-content: center;
+}
+
+._link{
+	text-decoration: none;
+	color: black;
+	transition: color 1s;
+}
+
+._link:hover{
+	/*color: rgb(7, 0, 122);*/
+	color:rgba(0, 5, 74, 1)
+}
+
+@media screen and (orientation: portrait) and (max-width:700px){
+
+	select{
+		font-size:15px;
+		margin-left:0px
+	}
+
+	input{
+		font-size:15px;
+	}
+	
+	._submit{
+		margin-left:0;
+		font-size:15px;
+	}
+
+	label{
+		font-size:12px;
+	}
+}
